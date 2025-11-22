@@ -9,7 +9,7 @@ const intialSection = document.getElementById("intial-section");
 const gameSection = document.getElementById("game-section");
 const playerChoice = document.getElementById("player-choice");
 const houseChoice = document.getElementById("house-choice");
-const choices = ["rock", "paper", "scissors"];
+const choices = ["rock", "paper", "scissor"];
 const messageEl = document.getElementById("result-message");
 
 rulesBtn.addEventListener("click", () => {
@@ -83,14 +83,11 @@ function playGame(playerChoice) {
   if (result === "YOU WIN") {
     score++;
     document.getElementById("game-score").textContent = score;
-  } else if (result === "YOU LOSE") {
-    score = Math.max(0, score - 1);
-    document.getElementById("game-score").textContent = score;
-  }
+  } 
 }
 
 function getResult(player, house) {
-  if (player === house) {
+  if (player == house) {
     return "DRAW";
   }
   if (
